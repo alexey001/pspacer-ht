@@ -1,0 +1,13 @@
+2010-09-14  Ryousei Takano  <takano-ryousei@aist.go.jp>
+
+	*  Version 1.0.0.
+
+2009-04-13  Ryousei Takano  <takano-ryousei@aist.go.jp>
+
+	*  Version 0.1.0.
+	*  It is rewritten as a simple classless qdisc based on pfifo.
+
+2009-03-09  Ryousei Takano  <takano-ryousei@aist.go.jp>
+
+	*  Version 0.0.1.
+	*  This version is based on PSPacer.

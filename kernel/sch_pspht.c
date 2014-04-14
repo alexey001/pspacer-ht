@@ -219,13 +219,15 @@ static int pspht_dump(struct Qdisc *sch, struct sk_buff *skb)
 
 	opt.rate = q->rate;
 	opt.maxburst = (u32)q->maxburst / 1000;
-	NLA_PUT(skb, TCA_OPTIONS, sizeof(opt), &opt);
-
-	return skb->len;
-
- nla_put_failure:
-	nlmsg_trim(skb, b);
-	return -1;
+	if(!nla_put(skb, TCA_OPTIONS, sizeof(opt), &opt))
+	{
+		return skb->len;
+	}
+	else
+	{
+		nlmsg_trim(skb, b);
+		return -1;
+	}
 }
 
 struct Qdisc_ops pspht_qdisc_ops __read_mostly = {
